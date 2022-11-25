@@ -1,5 +1,11 @@
+import AllProducts from './components/Pages/AllProducts';
+
 function App() {
-  return <div>Welcome to Qatar 2022🏆</div>;
+  return (
+    <div>
+      <AllProducts />
+    </div>
+  );
 }
 
 export default App;
