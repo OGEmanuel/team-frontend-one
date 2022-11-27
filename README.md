@@ -7,9 +7,9 @@
 # You need to remember to install dependencies using "npm install" command before you continue
 
 4. create a new branch with "git checkout -b [branch-name]"
-   45 make your desired changes
-5. add changes to staging area with "git add ." command
-6. commit changes with "git commit -m [message-typically-what-you're-about-to-add]
+5. make your desired changes
+6. add changes to staging area with "git add ." command
+7. commit changes with "git commit -m [message-typically-what-you're-about-to-add]
 
 # Please ensure that you're neither working in the master branch nor pushing into the master branch
 
