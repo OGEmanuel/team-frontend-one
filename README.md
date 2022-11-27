@@ -2,6 +2,9 @@
 
 1. clone repo
 2. type in "git pull origin master" in your terminal (to make sure the code you're working with is up to date)
+
+# You need to remember to install dependencies using "npm install" command before you continue
+
 3. create a new branch with "git checkout -b [branch-name]"
 4. make your desired changes
 5. add changes to staging area with "git add ." command
