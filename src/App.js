@@ -1,5 +1,7 @@
+import AllProducts from './components/AllProducts/AllProducts';
+
 function App() {
-  return <h1>Welcome to Qatar 2022🏆</h1>;
+  return <AllProducts />;
 }
 
 export default App;
