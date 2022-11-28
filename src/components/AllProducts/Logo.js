@@ -7,7 +7,7 @@ const Logo = () => {
   return (
     <div className={classes['logo-box']}>
       <img src={logo} alt="logo" />
-      <img src={cart} alt="shopping cart" />
+      <img className={classes.cart} src={cart} alt="shopping cart" />
     </div>
   );
 };
