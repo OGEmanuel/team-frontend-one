@@ -1,7 +1,14 @@
-import AllProducts from './components/AllProducts/AllProducts';
+// import AllProducts from './components/AllProducts/AllProducts';
+import React from "react";
+import Navbar from "./components/Navbar/Navbar.js";
 
 function App() {
-  return <AllProducts />;
+  return (
+    <>
+     <Navbar />
+      {/* <AllProducts />; */}
+    </>
+  );
 }
 
 export default App;
