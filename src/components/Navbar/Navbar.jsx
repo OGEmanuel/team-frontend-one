@@ -4,7 +4,7 @@ import Logo from '../../assests/logo.png';
 import { FaSearch } from 'react-icons/fa';
 import { BsCart3 } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
-import './Header.css';
+import './Navbar.css';
 
 function Header() {
   const [click, setClick] = useState(false);
@@ -19,24 +19,24 @@ function Header() {
           </div>
 
           <div className={click ? 'nav-menu active' : 'nav-menu'}>
-            <div className='search'>
+            <div className="search">
               <input
                 type="text"
-                className='search-box'
+                className="search-box"
                 placeholder="search product"
               />
-              <button className='search-btn'>
+              <button className="search-btn">
                 <FaSearch />
               </button>
             </div>
             <div className="nav-item">
-              <NavLink to="" className="nav-links" >
-                <BsCart3 size="20px"/>
+              <NavLink to="" className="nav-links">
+                <BsCart3 size="20px" />
               </NavLink>
             </div>
             <div className="nav-item">
-              <NavLink to="" className="nav-links" >
-                <FaUserAlt size="20px"/>
+              <NavLink to="" className="nav-links">
+                <FaUserAlt size="20px" />
               </NavLink>
             </div>
             <div className="nav-item">
@@ -45,7 +45,7 @@ function Header() {
               </NavLink>
             </div>
             <div className="nav-item">
-              <NavLink to="" className="nav-links" >
+              <NavLink to="" className="nav-links">
                 FAQ
               </NavLink>
             </div>
