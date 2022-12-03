@@ -33,7 +33,9 @@ const SingleProduct = () => {
       </div>
       <div>
         <div className={classes.sectionImg}>
-          {previewCart && <CartPreview onClosePreview={closeCartPreviewHandler} />}
+          {previewCart && (
+            <CartPreview onClosePreview={closeCartPreviewHandler} />
+          )}
 
           <div className={classes.text}>
             <h2>Samurai King Resting</h2>
