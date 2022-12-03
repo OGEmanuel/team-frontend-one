@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #b4b4b4;
+}
+
+.pagination span {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.active {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #000;
+}
