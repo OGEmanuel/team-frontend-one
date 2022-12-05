@@ -6,12 +6,15 @@ import first from '../../assets/redBench.png';
 import Button from '../UI/Button';
 
 import classes from './Products.module.css';
+import Filter from './Filter';
+import TitleBar from './TitleBar';
 
 const productsPerPage = 4;
 const bestSeller = <p className={classes.tag}>Best Seller</p>;
 
 const Products = props => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filter, setFilter] = useState(false);
 
   const products = props.products;
 
@@ -25,6 +28,14 @@ const Products = props => {
 
   return (
     <Fragment>
+      {!filter && <TitleBar filter={filter} onSetFilter={setFilter} />}
+
+      {filter && (
+        <div className={classes.filter}>
+          <Filter setFilter={setFilter} filter={filter} />
+        </div>
+      )}
+
       {visibleProducts.map(list => (
         <div className={classes.products} key={list.id}>
           {list.image === first && bestSeller}
