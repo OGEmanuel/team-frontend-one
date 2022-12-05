@@ -1,3 +1,22 @@
+.filter {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 203%);
+  width: 100vw;
+  opacity: 1;
+  animation: slideIn 1s;
+  transition: all;
+  background-color: #fff;
+  z-index: 50;
+}
+
+.products {
+  padding: 3rem;
+  position: relative;
+  /* z-index: -50; */
+}
+
 .tag {
   background-color: #fff;
   width: 35%;
@@ -50,4 +69,14 @@
   margin-bottom: 5rem;
 }
 
+@keyframes slideIn {
+  from {
+    transform: translate(50%, 203%);
+    opacity: 0;
+  }
 
+  to {
+    transform: translate(0%, 203%);
+    opacity: 1;
+  }
+}

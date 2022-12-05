@@ -1,0 +1,32 @@
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 3rem 0 3rem;
+}
+
+.title-bar img {
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.slash {
+  font-size: 3.7rem;
+  font-weight: 700;
+}
+
+.sub-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #9b9b9b;
+}
