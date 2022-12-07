@@ -2,7 +2,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
-  transform: translate(0%, 203%);
+  transform: translate(0%, 198%);
   width: 100vw;
   opacity: 1;
   animation: slideIn 1s;
@@ -71,12 +71,12 @@
 
 @keyframes slideIn {
   from {
-    transform: translate(50%, 203%);
+    transform: translate(50%, 198%);
     opacity: 0;
   }
 
   to {
-    transform: translate(0%, 203%);
+    transform: translate(0%, 198%);
     opacity: 1;
   }
 }
