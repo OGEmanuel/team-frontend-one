@@ -21,3 +21,17 @@ body {
   font-family: 'Archivo', sans-serif;
   background: #fff;
 }
+
+.not-found{
+  font-size: 3.5rem;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading{
+  font-size: 2rem;
+  text-align: center;
+}
