@@ -41,9 +41,9 @@ const SingleProduct = () => {
             <h2>Samurai King Resting</h2>
           </div>
           <div className={classes.add}>
-            <a className={classes.btn} href="/">
+            <button className={classes.btn} href="/">
               ADD TO CART
-            </a>
+            </button>
           </div>
           <div className={classes.imgBox}>
             <img

@@ -36,6 +36,7 @@ h2 {
   font-size: 32px;
 }
 .btn {
+  border: none;
   background: #000;
   color: #fff;
   padding: 13px 39px;
