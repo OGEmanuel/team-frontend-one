@@ -18,11 +18,11 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Archivo', sans-serif !important;
   background: #fff;
 }
 
-.not-found{
+.not-found {
   font-size: 3.5rem;
   text-align: center;
   height: 100vh;
@@ -31,7 +31,7 @@ body {
   justify-content: center;
 }
 
-.loading{
+.loading {
   font-size: 2rem;
   text-align: center;
 }
