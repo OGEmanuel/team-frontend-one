@@ -1,28 +1,30 @@
+import nextId from 'react-id-generator';
 import TitleBar from './TitleBar';
 
 import close from '../../assets/Close.svg';
 
 import classes from './Filter.module.css';
 import { Fragment } from 'react';
+import FilterItems from './FilterItems';
 
 const DESCRIPTION = {
   List: [
-    { des: 'People' },
-    { des: 'Premium' },
-    { des: 'Pets' },
-    { des: 'Food' },
-    { des: 'Landmarks' },
-    { des: 'Cities' },
-    { des: 'Nature' },
+    { id: nextId(), des: 'People' },
+    { id: nextId(), des: 'Premium' },
+    { id: nextId(), des: 'Pets' },
+    { id: nextId(), des: 'Food' },
+    { id: nextId(), des: 'Landmarks' },
+    { id: nextId(), des: 'Cities' },
+    { id: nextId(), des: 'Nature' },
   ],
 };
 
 const PRICE = {
   List: [
-    { pri: 'Lower than $20' },
-    { pri: '$20 - $100' },
-    { pri: '$100 - $200' },
-    { pri: 'More than $200' },
+    { id: nextId(), des: 'Lower than $20' },
+    { id: nextId(), des: '$20 - $100' },
+    { id: nextId(), des: '$100 - $200' },
+    { id: nextId(), des: 'More than $200' },
   ],
 };
 
@@ -42,47 +44,16 @@ const Filter = props => {
             <p>Filter</p>
             <img onClick={handleClick} src={close} alt="" />
           </div>
-          <ul className={classes.description}>
-            {DESCRIPTION.List.map((list, index) => (
-              <li key={index}>
-                <label className={classes.box} htmlFor={`check-${index}`}>
-                  {list.des}
-                  <input
-                    type="checkbox"
-                    id={`check-${index}`}
-                    name={list.des}
-                    value={list.des}
-                  />
-                  <span
-                    className={classes.checkmark}
-                    id={`check-${index}`}
-                  ></span>
-                </label>
-              </li>
-            ))}
+          <ul>
+            <div className={classes.span}>
+              <FilterItems items={DESCRIPTION.List} />
+            </div>
           </ul>
-
           <div className={classes['filter-nav']}>
             <p className={classes.price}>Price range</p>
           </div>
           <ul>
-            {PRICE.List.map((list, index) => (
-              <li key={index + 10}>
-                <label className={classes.box} htmlFor={`check-${index + 10}`}>
-                  {list.pri}
-                  <input
-                    type="checkbox"
-                    id={`check-${index + 10}`}
-                    name={list.pri}
-                    value={list.pri}
-                  />
-                  <span
-                    className={classes.checkmark}
-                    id={`check-${index}`}
-                  ></span>
-                </label>
-              </li>
-            ))}
+            <FilterItems items={PRICE.List} />
           </ul>
         </div>
         <div className={classes['button-box']}>

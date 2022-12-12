@@ -3,11 +3,11 @@ import { Fragment, useState } from 'react';
 import Pagination from './Pagination';
 
 import first from '../../assets/redBench.png';
-import Button from '../UI/Button';
 
 import classes from './Products.module.css';
 import Filter from './Filter';
 import TitleBar from './TitleBar';
+import { useFormClassNames } from 'rsuite';
 
 const productsPerPage = 4;
 const bestSeller = <p className={classes.tag}>Best Seller</p>;
@@ -42,7 +42,7 @@ const Products = props => {
           <div className={classes.image}>
             <img src={list.image} alt={list.name} />
           </div>
-          <Button className={classes.button}>ADD TO CART</Button>
+          <button className={classes.button}>ADD TO CART</button>
           <p className={classes.description}>{list.description}</p>
           <p className={classes.name}>{list.name}</p>
           <p className={classes.price}>{list.price}</p>
