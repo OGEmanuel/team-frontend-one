@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
   font-family: 'Archivo', sans-serif !important;
   background: #fff;
+  color: #000 !important;
 }
 
 .not-found {

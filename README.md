@@ -1,4 +1,4 @@
-# DO NOT FORK REPO!!!
+# Begin by FORKING THE REPO
 
 1. clone repo
 2. type in "git pull origin master" in your terminal (to make sure the code you're working with is up to date)
