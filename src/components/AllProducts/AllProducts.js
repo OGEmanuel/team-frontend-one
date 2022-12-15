@@ -143,7 +143,6 @@ const ALL_PRODUCTS = {
 const AllProducts = () => {
   return (
     <section className={classes['all-products']}>
-      {/* <TitleBar /> */}
       <Products products={ALL_PRODUCTS.List} />
     </section>
   );

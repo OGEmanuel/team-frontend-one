@@ -30,3 +30,29 @@
   font-weight: 400;
   color: #9b9b9b;
 }
+
+@media (width <= 37.4em) {
+  .sort {
+    display: none;
+  }
+}
+
+@media (width > 37.4em) {
+  .title-bar {
+    padding: 0;
+    border-top: 0.5rem solid #e4e4e4;
+  }
+  .filter {
+    display: none;
+  }
+
+  .sort-box {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .sort {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

@@ -28,7 +28,7 @@ const Pagination = props => {
           <span
             key={page}
             onClick={() => props.setCurPage(page)}
-            className={props.curPage === page ? classes.active : ''}
+            className={classes[props.curPage === page ? 'active' : '']}
           >
             {page}
           </span>

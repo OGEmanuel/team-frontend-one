@@ -53,3 +53,43 @@ button {
   background-color: #000;
   color: #fff;
 }
+
+@media (width <= 37.4em) {
+  .filter-tag {
+    display: none;
+  }
+}
+
+@media (width > 37.4em) {
+  .header {
+    display: none;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .filter {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .filter-nav {
+    display: none;
+  }
+
+  .filter-tag {
+    display: flex;
+    /* gap: 34rem; */
+    padding: 0;
+  }
+
+  .filter-tag p {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .button-box {
+    padding: 0;
+  }
+}
