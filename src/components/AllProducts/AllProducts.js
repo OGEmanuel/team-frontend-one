@@ -137,6 +137,70 @@ const ALL_PRODUCTS = {
       name: 'Red Bench',
       price: '$3.89',
     },
+
+    {
+      id: nextId(),
+      image: first,
+      description: 'People',
+      name: 'Red Bench',
+      price: '$3.89',
+    },
+
+    {
+      id: nextId(),
+      image: second,
+      description: 'Food',
+      name: 'Egg Balloon',
+      price: '$93.89',
+    },
+
+    {
+      id: nextId(),
+      image: third,
+      description: 'People',
+      name: 'Man',
+      price: '$100.00',
+    },
+
+    {
+      id: nextId(),
+      image: fourth,
+      description: 'Landmarks',
+      name: 'Architecture',
+      price: '$101.00',
+    },
+
+    {
+      id: nextId(),
+      image: fourth,
+      description: 'Landmarks',
+      name: 'Architecture',
+      price: '$101.00',
+    },
+
+    {
+      id: nextId(),
+      image: third,
+      description: 'People',
+      name: 'Man',
+      price: '$100.00',
+    },
+
+    {
+      id: nextId(),
+      image: second,
+      description: 'Food',
+      name: 'Egg Balloon',
+      price: '$93.89',
+    },
+
+    {
+      id: nextId(),
+      image: first,
+      description: 'People',
+      name: 'Red Bench',
+      price: '$3.89',
+    },
   ],
 };
 

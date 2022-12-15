@@ -52,3 +52,10 @@ li {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+@media (width > 37.4em) {
+  li {
+    padding-bottom: 2rem;
+    /* padding-top: 1rem; */
+  }
+}
