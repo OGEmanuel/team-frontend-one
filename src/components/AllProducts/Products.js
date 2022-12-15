@@ -8,7 +8,7 @@ import classes from './Products.module.css';
 import Filter from './Filter';
 import TitleBar from './TitleBar';
 
-const productsPerPage = 4;
+const productsPerPage = 6;
 const bestSeller = <p className={classes.tag}>Best Seller</p>;
 
 const Products = props => {

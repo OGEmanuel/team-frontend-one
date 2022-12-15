@@ -39,7 +39,7 @@
 
 @media (width > 37.4em) {
   .title-bar {
-    padding: 0;
+    padding: 5rem 0 0 0;
     border-top: 0.5rem solid #e4e4e4;
   }
   .filter {
