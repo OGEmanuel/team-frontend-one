@@ -44,6 +44,9 @@ const Filter = props => {
             <p>Filter</p>
             <img onClick={handleClick} src={close} alt="" />
           </div>
+          <div className={classes['filter-tag']}>
+            <p>Category</p>
+          </div>
           <ul>
             <div className={classes.span}>
               <FilterItems items={DESCRIPTION.List} />
@@ -51,6 +54,9 @@ const Filter = props => {
           </ul>
           <div className={classes['filter-nav']}>
             <p className={classes.price}>Price range</p>
+          </div>
+          <div className={classes['filter-tag']}>
+            <p>Price range</p>
           </div>
           <ul>
             <FilterItems items={PRICE.List} />
