@@ -113,18 +113,15 @@
   }
 
   .title-bar__desktop {
-    /* background-color: red; */
     grid-column: sidebar-start / full-end;
   }
 
   .filter-desktop {
     background-color: #fbfbfb;
     grid-column: sidebar-start / sidebar-end;
-    /* grid-row: 2 / -1; */
   }
 
   .content {
-    /* background-color: green; */
     grid-column: center-start / center-end;
   }
 
@@ -140,7 +137,6 @@
   }
 
   .products {
-    /* background-color: blue; */
     display: grid;
     grid-template-rows: 1fr repeat(3, min-content);
   }
