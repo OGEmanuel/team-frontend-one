@@ -76,7 +76,6 @@ button {
   .filter {
     overflow-y: auto;
     height: auto;
-    /* background-color: #fff !important; */
   }
 
   .filter-nav {

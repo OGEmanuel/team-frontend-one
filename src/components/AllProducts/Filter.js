@@ -7,8 +7,7 @@ import classes from './Filter.module.css';
 import { Fragment } from 'react';
 import FilterItems from './FilterItems';
 
-const DESCRIPTION = {
-  List: [
+const DESCRIPTION = [
     { id: nextId(), des: 'People' },
     { id: nextId(), des: 'Premium' },
     { id: nextId(), des: 'Pets' },
@@ -16,17 +15,14 @@ const DESCRIPTION = {
     { id: nextId(), des: 'Landmarks' },
     { id: nextId(), des: 'Cities' },
     { id: nextId(), des: 'Nature' },
-  ],
-};
+  ]
 
-const PRICE = {
-  List: [
+const PRICE =  [
     { id: nextId(), des: 'Lower than $20' },
     { id: nextId(), des: '$20 - $100' },
     { id: nextId(), des: '$100 - $200' },
     { id: nextId(), des: 'More than $200' },
-  ],
-};
+  ]
 
 const Filter = props => {
   const handleClick = () => {
@@ -49,7 +45,7 @@ const Filter = props => {
           </div>
           <ul>
             <div className={classes.span}>
-              <FilterItems items={DESCRIPTION.List} />
+              <FilterItems items={DESCRIPTION} />
             </div>
           </ul>
           <div className={classes['filter-nav']}>
@@ -59,7 +55,7 @@ const Filter = props => {
             <p>Price range</p>
           </div>
           <ul>
-            <FilterItems items={PRICE.List} />
+            <FilterItems items={PRICE} />
           </ul>
         </div>
         <div className={classes['button-box']}>
