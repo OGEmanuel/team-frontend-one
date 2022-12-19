@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import LoadingSpinner from './components/UI/LoadingSpinner/LoadingSpinner';
 
 //Implement lazy loading
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound'));
@@ -14,13 +15,19 @@ const SingleProduct = React.lazy(() =>
 function App() {
   return (
     <Layout>
-      <Suspense fallback={<div className='loading'><p>Loading...</p></div>}>
+      <Suspense
+        fallback={
+          <div className="loading">
+            <LoadingSpinner />
+          </div>
+        }
+      >
         <Routes>
           <Route path="*" element={<PageNotFound />} />
           <Route path="account" />
           <Route path="/" element={<Navigate to="/all-products" />} />
           <Route path="/all-products" element={<AllProducts />} />
-          <Route path="/single-product" element={<SingleProduct />} />
+            <Route path="/all-products/single-product" element={<SingleProduct />} />
           <Route path="/cart" />
           <Route path="/checkout" />
           <Route path="/review" />
