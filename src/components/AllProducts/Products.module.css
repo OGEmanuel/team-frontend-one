@@ -128,7 +128,7 @@
   .box {
     margin-bottom: 5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 2.5rem;
   }
 
@@ -143,11 +143,15 @@
 
   .tag {
     padding: 0.5rem;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
 
   .image {
     width: 100%;
+  }
+
+  .button {
+    padding: 0.7rem;
   }
 
   p {
