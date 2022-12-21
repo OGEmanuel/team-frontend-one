@@ -6,27 +6,38 @@ import close from '../../assets/Close.svg';
 import classes from './Filter.module.css';
 import { Fragment } from 'react';
 import FilterItems from './FilterItems';
+// import { useState } from 'react';
 
 const DESCRIPTION = [
-    { id: nextId(), des: 'People' },
-    { id: nextId(), des: 'Premium' },
-    { id: nextId(), des: 'Pets' },
-    { id: nextId(), des: 'Food' },
-    { id: nextId(), des: 'Landmarks' },
-    { id: nextId(), des: 'Cities' },
-    { id: nextId(), des: 'Nature' },
-  ]
+  { id: nextId(), des: 'People' },
+  { id: nextId(), des: 'Premium' },
+  { id: nextId(), des: 'Pets' },
+  { id: nextId(), des: 'Food' },
+  { id: nextId(), des: 'Landmarks' },
+  { id: nextId(), des: 'Cities' },
+  { id: nextId(), des: 'Nature' },
+];
 
-const PRICE =  [
-    { id: nextId(), des: 'Lower than $20' },
-    { id: nextId(), des: '$20 - $100' },
-    { id: nextId(), des: '$100 - $200' },
-    { id: nextId(), des: 'More than $200' },
-  ]
+const PRICE = [
+  { id: nextId(), des: 'Lower than $20' },
+  { id: nextId(), des: '$20 - $100' },
+  { id: nextId(), des: '$100 - $200' },
+  { id: nextId(), des: 'More than $200' },
+];
+
+// const showFilteredResults = filters => {};
 
 const Filter = props => {
   const handleClick = () => {
     props.setFilter(false);
+  };
+
+  const filterChangeHandler = selected => {
+    props.onFilter(selected);
+  };
+
+  const filterPrice = selected => {
+    props.onFilterPrice(selected);
   };
 
   return (
@@ -45,7 +56,7 @@ const Filter = props => {
           </div>
           <ul>
             <div className={classes.span}>
-              <FilterItems items={DESCRIPTION} />
+              <FilterItems onFilter={filterChangeHandler} items={DESCRIPTION} />
             </div>
           </ul>
           <div className={classes['filter-nav']}>
@@ -55,7 +66,7 @@ const Filter = props => {
             <p>Price range</p>
           </div>
           <ul>
-            <FilterItems items={PRICE} />
+            <FilterItems onFilter={filterPrice} items={PRICE} />
           </ul>
         </div>
         <div className={classes['button-box']}>

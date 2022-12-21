@@ -7,6 +7,7 @@ import fourth from '../../assets/Architecture.png';
 
 import classes from './AllProducts.module.css';
 import Products from './Products';
+import { useState } from 'react';
 
 const ALL_PRODUCTS = [
   {
@@ -14,7 +15,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 
   {
@@ -22,7 +23,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -30,7 +31,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -38,7 +39,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -46,7 +47,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -54,7 +55,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -62,7 +63,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -70,7 +71,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 
   {
@@ -78,7 +79,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 
   {
@@ -86,7 +87,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -94,7 +95,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -102,7 +103,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -110,7 +111,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -118,7 +119,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -126,7 +127,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -134,7 +135,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 
   {
@@ -142,7 +143,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 
   {
@@ -150,7 +151,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -158,7 +159,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -166,7 +167,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -174,7 +175,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '$101.00',
+    price: '101.00',
   },
 
   {
@@ -182,7 +183,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '$100.00',
+    price: '100.00',
   },
 
   {
@@ -190,7 +191,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '$93.89',
+    price: '93.89',
   },
 
   {
@@ -198,14 +199,46 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '$3.89',
+    price: '3.89',
   },
 ];
 
 const AllProducts = () => {
+  const [products, setProducts] = useState(ALL_PRODUCTS);
+
+  const handleFilter = filteredProducts => {
+    const newProducts = ALL_PRODUCTS.map(pro => pro).filter(pro =>
+      filteredProducts.includes(pro.description)
+    );
+    if (newProducts.length > 1) {
+      setProducts(newProducts);
+    } else {
+      setProducts(ALL_PRODUCTS);
+    }
+  };
+
+  const handlePriceFilter = filteredPrice => {
+    if (filteredPrice.includes('Lower than $20')) {
+      const priceFiltered = products
+        .map(pro => pro)
+        .filter(pro => pro.price < 20);
+      console.log(priceFiltered);
+    }
+    if (filteredPrice.includes('$20 - $100')) {
+      const priceFiltered = products
+        .map(pro => pro)
+        .filter(pro => pro.price >= 20 && pro.price <= 100);
+      console.log(priceFiltered);
+    }
+  };
+
   return (
     <section className={classes['all-products']}>
-      <Products products={ALL_PRODUCTS} />
+      <Products
+        onFilter={handleFilter}
+        onPriceFilter={handlePriceFilter}
+        products={products}
+      />
     </section>
   );
 };
