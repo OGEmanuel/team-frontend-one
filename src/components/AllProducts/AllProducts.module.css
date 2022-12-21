@@ -1,3 +1,11 @@
 .all-products {
   border-top: 0.5rem solid #e4e4e4;
 }
+
+@media (width > 37.4em) {
+  .all-products {
+    border-top: none;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

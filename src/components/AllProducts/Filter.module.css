@@ -7,20 +7,15 @@
   background-color: hsl(0, 0%, 85%);
 }
 
-/* .header:after {
-  position: absolute;
-  content: '';
-  width: 70%;
-  height: 0.2%;
-  top: 83%;
-  left: 7%;
-  background-color: #c2c2c2;
-} */
+ul {
+  padding: 2rem 3.5rem 0;
+  list-style: none;
+  font-size: 2rem;
+}
 
 .filter-nav {
   display: flex;
   gap: 34rem;
-  /* justify-content: space-between; */
   padding: 1rem 3rem 0;
 }
 
@@ -31,68 +26,6 @@
 
 .filter-nav img {
   cursor: pointer;
-  /* padding-left: rem; */
-}
-
-ul {
-  padding: 2rem 3.5rem 0;
-  list-style: none;
-  font-size: 2rem;
-}
-
-li {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 2rem;
-  align-items: center;
-}
-
-.box {
-  display: block;
-  position: relative;
-  padding-left: 3.5rem;
-  margin-bottom: 1.2rem;
-  cursor: pointer;
-  font-size: 2.2rem;
-}
-
-.box input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2.5rem;
-  width: 2.5rem;
-  border: 0.3rem solid #000;
-}
-
-.checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
-}
-
-.box input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.box .checkmark:after {
-  left: 0.6rem;
-  top: 0.2rem;
-  width: 0.7rem;
-  height: 1.5rem;
-  border: solid #000;
-  border-width: 0 0.3rem 0.3rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 
 .button-box {
@@ -102,9 +35,8 @@ li {
   border-top: 0.5rem solid hsl(0, 0%, 85%);
 }
 
-.price {
-  padding-top: 2rem;
-  border-top: 0.1rem solid hsl(0, 0%, 85%);
+.span {
+  border-bottom: 0.2rem solid hsl(0, 0%, 85%);
 }
 
 button {
@@ -120,4 +52,47 @@ button {
 .save {
   background-color: #000;
   color: #fff;
+}
+
+@media (width <= 37.4em) {
+  .filter-tag {
+    display: none;
+  }
+}
+
+@media (width > 37.4em) {
+  .header {
+    display: none;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .span {
+    margin-bottom: 2rem;
+  }
+
+  .filter {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .filter-nav {
+    display: none;
+  }
+
+  .filter-tag {
+    display: flex;
+    padding: 0 0 5rem 0;
+  }
+
+  .filter-tag p {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .button-box {
+    display: none;
+  }
 }
