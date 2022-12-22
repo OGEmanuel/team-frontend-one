@@ -217,8 +217,6 @@ const AllProducts = () => {
     }
   };
   const handlePriceFilter = filteredPrice => {
-    console.log(filteredPrice);
-
     if (filteredPrice.includes('Lower than $20')) {
       const checked = products.map(pro => pro).filter(pro => pro.price < 20);
       setProducts(checked);
