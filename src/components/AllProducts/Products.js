@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Pagination from './Pagination';
 
@@ -62,9 +63,9 @@ const Products = props => {
             {visibleProducts.map(list => (
               <div className={classes.products} key={list.id}>
                 {list.image === first && bestSeller}
-                <div className={classes.image}>
+                <Link to='/all-products/single-product' state={{src: list.image, category: list.description, name: list.name}}><div className={classes.image}>
                   <img src={list.image} alt={list.name} />
-                </div>
+                </div></Link>
                 <button className={classes.button}>ADD TO CART</button>
                 <p className={classes.description}>{list.description}</p>
                 <p className={classes.name}>{list.name}</p>

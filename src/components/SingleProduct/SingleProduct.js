@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import logo from '../../assets/Logo.svg';
 import cart from '../../assets/shopping-cart.svg';
-import dog from '../../assets/Dog.png';
+// import dog from '../../assets/Dog.png';
 import yellow from '../../assets/Yellow-wall.png';
 import wallFlower from '../../assets/wall-flower.png';
 import Balloon from '../../assets/Balloon.png';
@@ -15,9 +16,16 @@ const SingleProduct = () => {
   const showCartHandler = () => {
     setPreviewCart(true);
   };
+  
   const closeCartPreviewHandler = () => {
     setPreviewCart(false);
   };
+
+ const location = useLocation();
+ const state = location.state;
+  // useEffect(() => {
+  //   console.log(location.state);
+  // }, [])
 
   return (
     <section className={classes.product}>
@@ -38,7 +46,8 @@ const SingleProduct = () => {
           )}
 
           <div className={classes.text}>
-            <h2>Samurai King Resting</h2>
+            {/* <h2>Samurai King Resting</h2> */}
+            <h2>{state.name}</h2>
           </div>
           <div className={classes.add}>
             <button className={classes.btn} href="/">
@@ -48,7 +57,7 @@ const SingleProduct = () => {
           <div className={classes.imgBox}>
             <img
               className={classes.img}
-              src={dog}
+              src={state.src}
               alt="A dog resting on the floor"
             />
             <p className={classes.imgTag}>Photo of the day</p>
@@ -56,8 +65,8 @@ const SingleProduct = () => {
         </div>
         <div className={classes.productDescription}>
           <div className={classes.descriptionLeft}>
-            <h5>About the Samurai King Resting</h5>
-            <h5 className={classes.category}>Pets</h5>
+            <h5>About the {state.name}</h5>
+            <h5 className={classes.category}>{state.category}</h5>
             <p>
               So how did the classical Latin become so incoherent? According to
               McClintock, a 15th century typesetter likely scrambled part of
