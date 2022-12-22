@@ -15,7 +15,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 
   {
@@ -23,7 +23,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -31,7 +31,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -39,7 +39,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -47,7 +47,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -55,7 +55,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -63,7 +63,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -71,7 +71,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 
   {
@@ -79,7 +79,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 
   {
@@ -87,7 +87,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -95,7 +95,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -103,7 +103,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -111,7 +111,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -119,7 +119,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -127,7 +127,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -135,7 +135,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 
   {
@@ -143,7 +143,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 
   {
@@ -151,7 +151,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -159,7 +159,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -167,7 +167,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -175,7 +175,7 @@ const ALL_PRODUCTS = [
     image: fourth,
     description: 'Landmarks',
     name: 'Architecture',
-    price: '101.00',
+    price: 101.0,
   },
 
   {
@@ -183,7 +183,7 @@ const ALL_PRODUCTS = [
     image: third,
     description: 'People',
     name: 'Man',
-    price: '100.00',
+    price: 100.0,
   },
 
   {
@@ -191,7 +191,7 @@ const ALL_PRODUCTS = [
     image: second,
     description: 'Food',
     name: 'Egg Balloon',
-    price: '93.89',
+    price: 93.89,
   },
 
   {
@@ -199,7 +199,7 @@ const ALL_PRODUCTS = [
     image: first,
     description: 'People',
     name: 'Red Bench',
-    price: '3.89',
+    price: 3.89,
   },
 ];
 
@@ -216,19 +216,43 @@ const AllProducts = () => {
       setProducts(ALL_PRODUCTS);
     }
   };
-
   const handlePriceFilter = filteredPrice => {
+    console.log(filteredPrice);
+
     if (filteredPrice.includes('Lower than $20')) {
-      const priceFiltered = products
-        .map(pro => pro)
-        .filter(pro => pro.price < 20);
-      console.log(priceFiltered);
+      const checked = products.map(pro => pro).filter(pro => pro.price < 20);
+      setProducts(checked);
+      if (checked.length < 1) {
+        setProducts(ALL_PRODUCTS);
+      }
     }
+
     if (filteredPrice.includes('$20 - $100')) {
-      const priceFiltered = products
+      const checked2 = products
         .map(pro => pro)
         .filter(pro => pro.price >= 20 && pro.price <= 100);
-      console.log(priceFiltered);
+      setProducts(checked2);
+      if (checked2.length < 1) {
+        setProducts(ALL_PRODUCTS);
+      }
+    }
+
+    if (filteredPrice.includes('$100 - $200')) {
+      const checked3 = products
+        .map(pro => pro)
+        .filter(pro => pro.price >= 100 && pro.price <= 200);
+      setProducts(checked3);
+      if (checked3.length < 1) {
+        setProducts(ALL_PRODUCTS);
+      }
+    }
+
+    if (filteredPrice.includes('Lower than $200')) {
+      const checked4 = products.map(pro => pro).filter(pro => pro.price < 200);
+      setProducts(checked4);
+      if (checked4.length < 1) {
+        setProducts(ALL_PRODUCTS);
+      }
     }
   };
 

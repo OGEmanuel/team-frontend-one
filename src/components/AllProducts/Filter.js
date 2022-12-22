@@ -6,7 +6,6 @@ import close from '../../assets/Close.svg';
 import classes from './Filter.module.css';
 import { Fragment } from 'react';
 import FilterItems from './FilterItems';
-// import { useState } from 'react';
 
 const DESCRIPTION = [
   { id: nextId(), des: 'People' },
@@ -22,7 +21,7 @@ const PRICE = [
   { id: nextId(), des: 'Lower than $20' },
   { id: nextId(), des: '$20 - $100' },
   { id: nextId(), des: '$100 - $200' },
-  { id: nextId(), des: 'More than $200' },
+  { id: nextId(), des: 'Lower than $200' },
 ];
 
 // const showFilteredResults = filters => {};
