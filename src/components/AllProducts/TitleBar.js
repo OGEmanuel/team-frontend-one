@@ -5,6 +5,10 @@ import sort from '../../assets/sort.svg';
 import arrow from '../../assets/arrow-down.svg';
 
 const TitleBar = props => {
+  const handleSort = () => {
+    props.onSort(props.setSort(!props.sort));
+  };
+
   const handleClick = () => {
     props.onSetFilter(!props.filter);
   };
@@ -25,7 +29,7 @@ const TitleBar = props => {
         />
         <div className={classes['sort-box']}>
           <div className={classes.sort}>
-            <img src={sort} alt="" />
+            <img src={sort} alt="" onClick={handleSort} />
             <p className={classes['sub-title']}>Sort By</p>
           </div>
           <div className={classes.sort}>
