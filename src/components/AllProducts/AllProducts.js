@@ -205,7 +205,16 @@ const ALL_PRODUCTS = [
 
 const AllProducts = () => {
   const [products, setProducts] = useState(ALL_PRODUCTS);
+  const [sort, setSort] = useState(false);
 
+  const handleSort = () => {
+    if (sort) {
+      products.sort((a, b) => (a.price > b.price ? 1 : -1));
+    } else {
+      products.sort((a, b) => (a.price < b.price ? 1 : -1));
+    }
+    return;
+  };
   const handleFilter = filteredProducts => {
     const newProducts = ALL_PRODUCTS.map(pro => pro).filter(pro =>
       filteredProducts.includes(pro.description)
@@ -257,6 +266,9 @@ const AllProducts = () => {
   return (
     <section className={classes['all-products']}>
       <Products
+        onSort={handleSort}
+        sort={sort}
+        setSort={setSort}
         onFilter={handleFilter}
         onPriceFilter={handlePriceFilter}
         products={products}

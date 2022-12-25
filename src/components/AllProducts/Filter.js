@@ -24,8 +24,6 @@ const PRICE = [
   { id: nextId(), des: 'Lower than $200' },
 ];
 
-// const showFilteredResults = filters => {};
-
 const Filter = props => {
   const handleClick = () => {
     props.setFilter(false);

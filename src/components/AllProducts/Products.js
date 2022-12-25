@@ -46,7 +46,13 @@ const Products = props => {
 
       <div className={classes.container}>
         <div className={classes['title-bar__desktop']}>
-          <TitleBar filter={filter} onSetFilter={setFilter} />
+          <TitleBar
+            filter={filter}
+            onSetFilter={setFilter}
+            onSort={props.onSort}
+            sort={props.sort}
+            setSort={props.setSort}
+          />
         </div>
 
         <div className={classes['filter-desktop']}>
@@ -63,9 +69,18 @@ const Products = props => {
             {visibleProducts.map(list => (
               <div className={classes.products} key={list.id}>
                 {list.image === first && bestSeller}
-                <Link to='/all-products/single-product' state={{src: list.image, category: list.description, name: list.name}}><div className={classes.image}>
-                  <img src={list.image} alt={list.name} />
-                </div></Link>
+                <Link
+                  to="/all-products/single-product"
+                  state={{
+                    src: list.image,
+                    category: list.description,
+                    name: list.name,
+                  }}
+                >
+                  <div className={classes.image}>
+                    <img src={list.image} alt={list.name} />
+                  </div>
+                </Link>
                 <button className={classes.button}>ADD TO CART</button>
                 <p className={classes.description}>{list.description}</p>
                 <p className={classes.name}>{list.name}</p>
