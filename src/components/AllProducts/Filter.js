@@ -37,12 +37,29 @@ const Filter = props => {
     props.onFilterPrice(selected);
   };
 
+  const mobileCategoryFilterHandler = selected => {
+    props.onFilter(selected);
+  };
+
+  const mobilePriceFilter = selected => {
+    props.onFilterPrice(selected);
+  };
+
+  const submitHandler = e => {
+    e.preventDefault();
+    props.setFilter(false);
+  };
+
+  const clearHandler = () => {
+    window.location.reload();
+  };
+
   return (
     <Fragment>
       <div className={classes.header}>
         <TitleBar filter={props.filter} onSetFilter={props.setFilter} />
       </div>
-      <form>
+      <form onSubmit={e => submitHandler(e)}>
         <div className={classes.filter}>
           <div className={classes['filter-nav']}>
             <p>Filter</p>
@@ -53,7 +70,11 @@ const Filter = props => {
           </div>
           <ul>
             <div className={classes.span}>
-              <FilterItems onFilter={filterChangeHandler} items={DESCRIPTION} />
+              <FilterItems
+                onMobile={mobileCategoryFilterHandler}
+                onFilter={filterChangeHandler}
+                items={DESCRIPTION}
+              />
             </div>
           </ul>
           <div className={classes['filter-nav']}>
@@ -63,12 +84,20 @@ const Filter = props => {
             <p>Price range</p>
           </div>
           <ul>
-            <FilterItems onFilter={filterPrice} items={PRICE} />
+            <FilterItems
+              onMobile={mobilePriceFilter}
+              onFilter={filterPrice}
+              items={PRICE}
+            />
           </ul>
         </div>
         <div className={classes['button-box']}>
-          <button>CLEAR</button>
-          <button className={classes.save}>SAVE</button>
+          <button type="button" onClick={clearHandler}>
+            CLEAR
+          </button>
+          <button type="submit" className={classes.save}>
+            SAVE
+          </button>
         </div>
       </form>
     </Fragment>

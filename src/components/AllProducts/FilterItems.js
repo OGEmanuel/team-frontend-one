@@ -16,6 +16,7 @@ const FilterItems = props => {
     }
 
     setChecked(newChecked);
+    props.onMobile(newChecked);
     props.onFilter(newChecked);
   };
 

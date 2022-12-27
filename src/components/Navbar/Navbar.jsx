@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Dropdown from 'rsuite/Dropdown';
 import 'rsuite/dist/rsuite.min.css';
 import { NavLink, Link } from 'react-router-dom';
@@ -10,6 +10,15 @@ import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const [search, setSearch] = useState([]);
+  const inputRef = useRef();
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    const value = inputRef.current.value;
+    if (value === '') return;
+  };
 
   const handleClick = () => setClick(!click);
   return (
@@ -21,16 +30,18 @@ function Navbar() {
           </div>
 
           <div className={click ? 'nav-menu active' : 'nav-menu'}>
-            <div className="search">
-              <input
-                type="text"
-                className="search-box"
-                placeholder="search product"
-              />
-              <button className="search-btn">
-                <FaSearch />
-              </button>
-            </div>
+            <form onSubmit={onSubmit}>
+              <div className="search">
+                <input
+                  type="text"
+                  className="search-box"
+                  placeholder="search product"
+                />
+                <button className="search-btn" type="submit">
+                  <FaSearch />
+                </button>
+              </div>
+            </form>
             <div className="nav-item">
               <NavLink to="" className="nav-links">
                 <BsCart3 size="20px" />
