@@ -14,6 +14,7 @@ const bestSeller = <p className={classes.tag}>Best Seller</p>;
 
 const Products = props => {
   const [currentPage, setCurrentPage] = useState(1);
+  // toggles the filter menu on mobile
   const [filter, setFilter] = useState(false);
 
   const products = props.products;
@@ -39,7 +40,12 @@ const Products = props => {
 
         {filter && (
           <div className={classes.filter}>
-            <Filter setFilter={setFilter} filter={filter} />
+            <Filter
+              setFilter={setFilter}
+              onFilter={handleFilter}
+              onFilterPrice={handlePriceFilter}
+              filter={filter}
+            />
           </div>
         )}
       </div>
